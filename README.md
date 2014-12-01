@@ -36,14 +36,26 @@ elegance to query graphs.
 ## Running
 
 The minimum system requirements for this stack is 1 GB with 2 cores.
+### Using fig
+
+You first need to build the image
+```
+docker build -t closedloop/titan-rexster
+```
+then run
+```
+fig up
+```
+
+### by hand
 
 ```
-docker run -d --name es1 dockerfile/elasticsearch
+docker run -d --name es1 closedloop/elasticsearch:0.90.3
 docker run -d --name cs1 poklet/cassandra
-docker run -d -P --name mytitan --link es1:elasticsearch --link cs1:cassandra apobbati/titan-rexster
+docker run -d -P --name mytitan --link es1:elasticsearch --link cs1:cassandra closedloop/titan-rexster
 ```
 
-### Ports
+### Ports exposed
 
 8182: HTTP port for REST API
 
