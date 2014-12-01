@@ -2,10 +2,10 @@ FROM dockerfile/java:oracle-java7
 
 MAINTAINER Sean Kruzel <sean.kruzel.gmail.com> 
 
-ENV TITAN_HOME /opt/titan-0.5.0-hadoop2
-WORKDIR /opt/titan-0.5.0-hadoop2
+ENV TITAN_HOME /opt/titan-0.5.1-hadoop2
+WORKDIR /opt/titan-0.5.1-hadoop2
 
-RUN curl -o /opt/titan.zip http://s3.thinkaurelius.com/downloads/titan/titan-0.5.0-hadoop2.zip
+RUN curl -o /opt/titan.zip http://s3.thinkaurelius.com/downloads/titan/titan-0.5.1-hadoop2.zip
 
 RUN unzip /opt/titan.zip -d /opt/ && \
     rm /opt/titan.zip
